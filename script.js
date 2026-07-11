@@ -16,7 +16,7 @@ el.classList.add('active');
 
 window.addEventListener('scroll',animateReveal);
 animateReveal();
-const video = document.getElementById("showreelVideo");
+const video = document.getElementById("showreel-video reveal");
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
