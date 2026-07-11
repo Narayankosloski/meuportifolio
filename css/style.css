@@ -12,7 +12,12 @@
     padding:0;
     box-sizing:border-box;
 }
-
+*{
+    -webkit-user-select: none; /* Chrome, Edge e Safari */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* Internet Explorer */
+    user-select: none;
+}
 html{
     scroll-behavior:smooth;
 }
@@ -230,11 +235,21 @@ section{
 }
 
 .service-title{
-    font-family:'Anton';
+    font-family:'Anton', sans-serif;
     font-size:clamp(2rem,5vw,5rem);
     text-transform:uppercase;
+
+    color:var(--light);
+    text-decoration:none;
+    display:block;
+    width:100%;
+
+    transition:.3s;
 }
 
+.service:hover .service-title{
+    color:var(--accent);
+}
 /* SHOWREEL */
 
 .showreel{
