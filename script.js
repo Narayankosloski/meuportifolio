@@ -1,35 +1,32 @@
-const reveals = document.querySelectorAll('.reveal');
+const reveals = document.querySelectorAll(".reveal");
 
-function animateReveal(){
+function animateReveal() {
+    reveals.forEach(el => {
+        const top = el.getBoundingClientRect().top;
 
-reveals.forEach(el=>{
-
-const top = el.getBoundingClientRect().top;
-
-if(top < window.innerHeight - 100){
-el.classList.add('active');
+        if (top < window.innerHeight - 100) {
+            el.classList.add("active");
+        }
+    });
 }
 
-});
-
-}
-
-window.addEventListener('scroll',animateReveal);
+window.addEventListener("scroll", animateReveal);
 animateReveal();
-const video = document.getElementById("showreel-video reveal");
+
+// -----------------------------
+
+const video = document.getElementById("showreel-video");
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-
-        if(entry.isIntersecting){
+        if (entry.isIntersecting) {
             video.play();
-        }else{
+        } else {
             video.pause();
         }
-
     });
-},{
-    threshold:0.5
+}, {
+    threshold: 0.5
 });
 
 observer.observe(video);
